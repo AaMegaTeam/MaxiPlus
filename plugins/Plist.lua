@@ -14,7 +14,7 @@ do
 local function run(msg, matches)
   if matches[1] == 'plist' or 'planlist' then
     send_document(get_receiver(msg), "/root/blackplus/data/me/payment.webp", ok_cb, false)
-      return "For more information please Contact this robot \n\n@BlackSupport_Bot"
+      return "<i>برای دریافت لیست قیمت ها</i>\n\n<i>به ربات @aminpmresan_botپی ام بدین</i>"
 end
 end
 return {
