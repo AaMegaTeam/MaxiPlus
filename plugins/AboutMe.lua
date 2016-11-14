@@ -13,9 +13,13 @@ do
 
 local function run(msg, matches)
   if matches[1] == 'bot' then
+  if redis:get("id:"..msg.to.id..":"..msg.from.id) then
+return "<i>استفاده از این دستور هر دقیقه یکبار امکان پذیر است</i>"
+end
+redis:setex("id:"..msg.to.id..":"..msg.from.id, 60, true)
     if is_sudo(msg) then
     send_document(get_receiver(msg), "./data/me/version.webp", ok_cb, false)
-      return "B L A C K +\n---------------------------------------------\n|An Advanced Bot Based On #LUA|\n\n> Bot Number : +19092545429\n---------------------------------------------\n #Developer : [@MehdiHS | @MehdHS_Bot]\n---------------------------------------------\n #Sudoers :\n1 > [#Amirho3inf]\n2 > [#Surena]\n3 > [#Vandad_YflQw]\n4 > [#Alireza_NiGht]\n---------------------------------------------\n> Channel : @Black_CH"
+      return "<b>M A X I M U S +\n---------------------------------------------\n|<i>An Advanced Bot Based On LUA</i>|\n\n <b>Developer</b> : [@Teshne | @AminPmResan_Bot]\n---------------------------------------------\n> <b>Channel</b> : @pedaret\n\n<i>Thanks To</i><b>B L A C K +</b>"
     elseif is_admin1(msg) then
     send_document(get_receiver(msg), "./data/me/admin.webp", ok_cb, false)
       return "You're Admin"
