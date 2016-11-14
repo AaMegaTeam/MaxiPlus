@@ -235,7 +235,7 @@ end
 	if matches[1] == 'reload' then
 		receiver = get_receiver(msg)
 		reload_plugins(true)
-		return reply_msg(msg.id, "#BOT Reloaded By |"..msg.from.id.."| \n#All Plugins Reloaded! \n#All Changes Succesfully Installed.", ok_cb, false)
+		return reply_msg(msg.id, "<b>BOT Reloaded By</b> |"..msg.from.id.."| \n<b>All Plugins Reloaded!</b> \n<b>All Changes Succesfully Installed.</b>\n\n<b>M A X I M U S Is Ready!!</b>", ok_cb, false)
 	end
 	if matches[1] == 'updateid' then
 		local data = load_data(_config.moderation.data)
